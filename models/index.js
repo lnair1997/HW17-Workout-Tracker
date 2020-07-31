@@ -22,7 +22,6 @@ const workoutSchema = new Schema({
         distance: Number,
     }],
     totalDuration: Number,
-
 });
 
 const Workout = model("Workout", workoutSchema);
