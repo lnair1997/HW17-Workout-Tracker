@@ -29,20 +29,22 @@ router.get("/api/workouts", (req, res) => {
         });
 });
 
-router.put("/api/workouts/:id", (req, res) => {
-    let duration = + req.body.duration
-    Workout.findByIdAndUpdate(req.params.id, {
-        $push: {
-            exercises: req.body,
-        }, totalDuration: duration
-    }).then(dbWorkout => {
-        res.json(dbWorkout);
-    })
-        .catch(({ message }) => {
-            console.log(message);
+router.put("/api/workouts/:id", ({ body, params }, res) => {
+    Workout.findByIdAndUpdate(params.id,
+        {
+            $inc: { totalDuration: body.duration },
+            $push: { exercises: body }
+        },
+        {
+            new: true
+        })
+        .then(dbWorkout => {
+            res.json(dbWorkout);
+        })
+        .catch(err => {
+            res.json(err);
         });
 });
-
 
 
 module.exports = router;
