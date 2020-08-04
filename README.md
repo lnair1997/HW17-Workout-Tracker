@@ -3,16 +3,15 @@
 
 ## Description-
 
-- This is a workout tracker where the front-end code was given. It uses a Mongo database with Mongoose schema and handle routes with Express to store data and log multiple exercises. 
+This is a workout tracker where the front-end code was given. It uses a Mongo database with Mongoose schema and handle routes with Express to store data and log multiple exercises. 
 
----
 ## Table of Contents
 
 - [Technologies Used](#technologies-used)
 - [Installation](#installation)
 - [Webpage Display](#webpage-display)
 - [Heroku Deploy](#heroku-deploy)
----
+
 ## Technologies Used:
 
 1. HTML
@@ -21,7 +20,7 @@
 4. Charts
 5. Node
 6. MongoDB Cloud
----
+
 ## Installation:
 ```
 * npm express
@@ -29,7 +28,7 @@
 * npm mongoose
 * npm logger
 ```
----
+
 ## Webpage Display:
 
 ![Home Page](./assets/lastWorkout.JPG)
